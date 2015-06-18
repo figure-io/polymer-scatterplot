@@ -39,8 +39,11 @@ function yMinChanged( newVal, oldVal ) {
 		// [2] Update the yAxis:
 		this.$.yAxis.call( this._yAxis );
 
-		// [3] Update the paths:
-		this.$.paths.attr( 'd', this._line );
+		// [3] Update the dots:
+		this.$.dots
+			.attr('r', 3.5)
+			.attr('cx', this._cx )
+			.attr('cy', this._cy );
 	}
 	this.fire( 'yMin', {
 		'type': 'change'

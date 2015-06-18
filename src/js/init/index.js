@@ -2,7 +2,8 @@
 
 // MODULES //
 
-var uuid = require( 'node-uuid' );
+var uuid = require( 'node-uuid' ),
+	cache = require( './cache.js' );
 
 
 // FIXME: get rid of this dependency. Use polymer component.
@@ -24,7 +25,9 @@ var onResize = require( './../listeners/resize.js' ),
 // UTILS //
 
 var delayed = require( './../utils/delayed.js' ),
-	getLabel = require( './../utils/getLabel.js' );
+	getLabel = require( './../utils/getLabel.js' ),
+	x = require( './../utils/x.js' ),
+	y = require( './../utils/y.js' );
 
 /*
 var delayed = require( './../utils/delayed.js' ),
@@ -93,10 +96,10 @@ function init() {
 		.tickFormat( this._yTickFormat )
 		.ticks( this.yNumTicks || 5 );
 
+	// Dots...
+	this._cx = x( this._xScale );
+	this._cy = y( this._yScale );
 	/*
-	// Paths...
-	this._x = x( this._xScale );
-	this._y = y( this._yScale );
 	this._line = d3.svg.line()
 		.x( this._x )
 		.y( this._y )
@@ -130,7 +133,7 @@ function init() {
 	this._onResize = delayed( onResize( this ), 400 );
 
 	// Extend the element cache...
-	// this.$ = cache( this.$ );
+	this.$ = cache( this.$ );
 
 	// Clip path...
 	this._clipPathID = uuid.v4();

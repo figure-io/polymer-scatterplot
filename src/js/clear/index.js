@@ -16,7 +16,7 @@ function clear() {
 	// Remove data, annotations, labels:
 	this.labels = []; // FIXME: reallocating memory
 	this.data = []; // FIXME: reallocating memory
-	this.annotations.length = []; // FIXME: reallocating memory
+	// this.annotations.length = []; // FIXME: reallocating memory
 
 	// Reset the axes domains:
 	this._xScale.domain( [ 0, 1 ] );

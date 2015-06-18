@@ -2,11 +2,53 @@
 
 // MODULES //
 
-var EVENTS = require( './../events' );
+var EVENTS = require( './../events' ),
+	xValue = require( './../utils/xValue.js' ),
+	yValue = require( './../utils/yValue.js' );
 
 // PROPERTIES //
 
 var props = {};
+
+/**
+* Chart data.
+*
+* @type {Array}
+* @default []
+*/
+props.data = {
+	'observer': '_dataChanged',
+	'type': Array,
+	'value': function data() {
+		return [];
+	}
+};
+
+/**
+* x-value accessor.
+*
+* @type {Function}
+*/
+props.xValue = {
+	'observer': '_xValueChanged',
+	'type': Function,
+	'value': function getFcn() {
+		return xValue;
+	}
+};
+
+/**
+* y-value accessor.
+*
+* @type {Function}
+*/
+props.yValue = {
+	'observer': '_yValueChanged',
+	'type': Function,
+	'value': function getFcn() {
+		return yValue;
+	}
+};
 
 /**
 * Chart canvas width. If not explicitly set, defaults to the width of the parent node.

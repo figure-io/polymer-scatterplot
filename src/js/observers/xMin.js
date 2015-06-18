@@ -39,8 +39,11 @@ function xMinChanged( newVal, oldVal ) {
 		// [2] Update the xAxis:
 		this.$.xAxis.call( this._xAxis );
 
-		// [3] Update the paths:
-		this.$.paths.attr( 'd', this._line );
+		// [3] Update the dots:
+		this.$.dots
+			.attr('r', 3.5)
+			.attr('cx', this._cx )
+			.attr('cy', this._cy );
 	}
 	this.fire( 'xMin', {
 		'type': 'change'

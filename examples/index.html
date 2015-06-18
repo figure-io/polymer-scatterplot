@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Polymer | Scatterplot</title>
+
+		<link rel="shortcut icon" href="favicon.ico">
+
+		<!-- Load webcomponents.js for polyfill support -->
+		<script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+		<!-- Default to using the shadow DOM -->
+		<script>
+			window.Polymer = window.Polymer || {};
+			window.Polymer.dom = 'shadow';
+		</script>
+
+		<!-- Stylesheets -->
+		<link rel="stylesheet" href="./css/styles.css">
+
+		<!-- Load components -->
+		<link rel="import" href="../polymer-scatterplot.html">
+	</head>
+	<body unresolved>
+
+		<figure class="figure" id="figure1">
+			<polymer-scatterplot class="chart"></polymer-scatterplot>
+		</figure>
+		<figure class="figure" id="figure2">
+			<polymer-scatterplot class="chart"></polymer-scatterplot>
+		</figure>
+
+		<script type="text/javascript" src="./js/script.js"></script>
+
+	</body>
+</html>

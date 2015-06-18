@@ -17,6 +17,7 @@ function create() {
 	this
 		._createBase()
 		._createBackground()
+		._createDots()
 		._createAxes()
 		._createTitle();
 		/*

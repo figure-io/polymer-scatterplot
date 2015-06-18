@@ -35,9 +35,24 @@ element._createBase = require( './create/base.js' );
 
 element._createBackground = require( './create/background.js' );
 
+element._createDots = require( './create/dots.js' );
+
 element._createAxes = require( './create/axes.js' );
 
 element._createTitle = require( './create/title.js' );
+
+// CLEAR //
+
+element.clear = require( './clear' );
+
+// RESET //
+
+element._resetDots = require( './reset/dots.js' );
+
+// element._resetAnnotations = require( './reset/annotations.js' );
+
+// element._resetLegend = require( './reset/legend.js' );
+
 
 // LISTENERS
 
@@ -46,6 +61,12 @@ element._addListeners = require( './listeners/add.js' );
 element._removeListeners = require( './listeners/remove.js' );
 
 // OBSERVERS //
+
+element._dataChanged = require( './observers/data.js' );
+
+element._xValueChanged = require( './observers/xValue.js' );
+
+element._yValueChanged = require( './observers/yValue.js' );
 
 element._widthChanged = require( './observers/width.js' );
 
@@ -73,11 +94,19 @@ element._yMinChanged = require( './observers/yMin.js' );
 
 element._yMaxChanged = require( './observers/yMax.js' );
 
+element._xAxisOrientChanged = require( './observers/xAxisOrient.js' );
+
+element._yAxisOrientChanged = require( './observers/yAxisOrient.js' );
+
+element._autoResizeChanged = require( './observers/autoResize.js' );
+
+element._autoUpdateChanged = require( './observers/autoUpdate.js' );
+
 // UTILS //
 
-/*
 element.formatData = require( './utils/formatData.js' );
 
+/*
 element.formatAnnotations = require( './utils/formatAnnotations.js' );
 */
 
