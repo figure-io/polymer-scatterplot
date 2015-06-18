@@ -1,0 +1,26 @@
+<link rel="import" href="../../polymer/polymer.html">
+
+<!--
+	Element for displaying scatterplots.
+
+	Example:
+		<polymer-scatterplot id="chart"></polymer-scatterplot>
+
+	@element polymer-scatterplot
+	@status unstable
+-->
+
+<dom-module id="polymer-scatterplot">
+
+	<!-- STYLESHEETS -->
+	<link rel="import" type="css" href="./css/chart.css">
+
+	<!-- PRESENTATION CONTENT -->
+	<template>
+		<div class="chart" id="chart" on-dragenter="onDragEnter" on-dragover="onDragOver" on-dragleave="onDragLeave" on-drop="onDrop"></div>
+	</template>
+
+	<!-- REGISTRATION -->
+	<script src="./js/script.js"></script>
+
+</dom-module>
