@@ -37,8 +37,8 @@
     "data",
     "metrics",
     "scatter",
-	"plot",
-	"scatterplot",
+    "plot",
+    "scatterplot",
     "d3",
     "svg"
   ],
