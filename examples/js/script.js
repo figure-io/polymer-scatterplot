@@ -56,10 +56,12 @@
 		// [1] Configure the second figure...
 		el = charts[ 1 ];
 
+		/*
 		el.yMin = 0;
 		el.yMax = 1;
 		el.xMin = 0;
 		el.xMax = 1;
+		*/
 		el.xLabel = 'time';
 		/*
 		el.labels = [

@@ -32,17 +32,13 @@ function yDomain( min, max ) {
 		return;
 	}
 	if ( min === null ) {
-		min = d3.min( data, function onDataset( dataset ) {
-			return d3.min( dataset, function onDatum( d ) {
-				return d[ 1 ];
-			});
+		min = d3.min( data, function onDatum( d ) {
+			return d[ 1 ];
 		});
 	}
 	if ( max === null ) {
-		max = d3.max( data, function onDataset( dataset ) {
-			return d3.max( dataset, function onDatum( d ) {
-				return d[ 1 ];
-			});
+		max = d3.max( data, function onDatum( d ) {
+			return d[ 1 ];
 		});
 	}
 	return [ min, max ];

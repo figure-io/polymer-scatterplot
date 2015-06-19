@@ -19,12 +19,9 @@ function formatData( data ) {
 	var xValue = this.xValue,
 		yValue = this.yValue,
 		len,
-		dataset,
-		tmp,
-		n,
 		out,
 		err,
-		i, j;
+		i;
 
 	if ( !isArray( data ) ) {
 		err = new TypeError( 'formatData()::invalid input argument. Must provide an array. Value: `' + data + '`.' );
@@ -34,21 +31,10 @@ function formatData( data ) {
 	len = data.length;
 	out = new Array( len );
 	for ( i = 0; i < len; i++ ) {
-		dataset = data[ i ];
-		if ( !isArray( dataset ) ) {
-			err = new TypeError( 'formatData()::invalid input argument. Must provide an array of arrays. Value: `' + data + '`.' );
-			this.fire( 'err', err );
-			return;
-		}
-		n = dataset.length;
-		tmp = new Array( n );
-		for ( j = 0; j < n; j++ ) {
-			tmp[ j ] = [
-				xValue( dataset[ j ] ),
-				yValue( dataset[ j ] )
-			];
-		}
-		out[ i ] = tmp;
+		out[ i ] =  [
+			xValue( data[ i ] ),
+			yValue( data[ i ] )
+		];
 	}
 	return out;
 } // end FUNCTION formatData()

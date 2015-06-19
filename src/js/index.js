@@ -94,6 +94,10 @@ element._yMinChanged = require( './observers/yMin.js' );
 
 element._yMaxChanged = require( './observers/yMax.js' );
 
+element._xNumTicksChanged = require( './observers/xNumTicks.js' );
+
+element._yNumTicksChanged = require( './observers/yNumTicks.js' );
+
 element._xAxisOrientChanged = require( './observers/xAxisOrient.js' );
 
 element._yAxisOrientChanged = require( './observers/yAxisOrient.js' );
@@ -101,6 +105,8 @@ element._yAxisOrientChanged = require( './observers/yAxisOrient.js' );
 element._autoResizeChanged = require( './observers/autoResize.js' );
 
 element._autoUpdateChanged = require( './observers/autoUpdate.js' );
+
+element._radiusChanged = require( './observers/radius.js' );
 
 // UTILS //
 

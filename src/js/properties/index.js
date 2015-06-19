@@ -207,6 +207,30 @@ props.yMax = {
 };
 
 /**
+* Number of tick marks on the x-axis. See [D3 documentation]{@link https://github.com/mbostock/d3/wiki/SVG-Axes#ticks}.
+*
+* @type {Number|Null}
+* @default null
+*/
+props.xNumTicks = {
+	'observer': '_xNumTicksChanged',
+	'type': Number,
+	'value': null
+};
+
+/**
+* Number of tick marks on the y-axis. See [D3 documentation]{@link https://github.com/mbostock/d3/wiki/SVG-Axes#ticks}.
+*
+* @type {Number|Null}
+* @default null
+*/
+props.yNumTicks = {
+	'observer': '_yNumTicksChanged',
+	'type': Number,
+	'value': null
+};
+
+/**
 * x-axis orientation. See [D3 documentation]{@link https://github.com/mbostock/d3/wiki/SVG-Axes#orient}.
 *
 * @type {String}
@@ -265,6 +289,29 @@ props.events = {
 		return EVENTS.slice();
 	}
 };
+
+/**
+* Radii for plotted points
+*
+* @type {Number|Number[]}
+*/
+props.radius = {
+	'observer': '_radiusChanged',
+	'type': Object,
+	'value': 3
+};
+
+/**
+* Color(s) for plotted points
+*
+* @type {Number|Number[]}
+*/
+props.colors = {
+	'observer': '_colorsChanged',
+	'value': 'category10'
+};
+
+
 
 
 // EXPORTS //

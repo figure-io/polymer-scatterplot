@@ -25,7 +25,7 @@ function createDots() {
 		.enter()
 		.append('circle')
 			.attr('class', 'dot')
-			.attr('r', 3.5)
+			.attr('r', this.radius )
 			.attr('cx', this._cx )
 			.attr('cy', this._cy );
 
