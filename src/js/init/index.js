@@ -74,7 +74,7 @@ function init() {
 	this._xScale = d3.scale.linear();
 	this._yScale = d3.scale.linear();
 	this._alphaScale = d3.scale.linear();
-	this._radiusScale = d3.scale.sqrt();
+	this._radiusScale = d3.scale.linear();
 
 	this._xScale
 		.domain( [ 0, 1 ] )

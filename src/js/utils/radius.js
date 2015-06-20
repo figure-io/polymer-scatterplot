@@ -1,5 +1,11 @@
 'use strict';
 
+// MODULES //
+
+var isFunction = require( 'validate.io-function' );
+
+// RADIUS //
+
 /**
 * FUNCTION: radius( radiusScale )
 *	Wraps a scale and returns a function.
@@ -11,7 +17,7 @@ function radius( d ) {
 	/* jslint validthis:true */
 	var radiusScale = this._radiusScale,
 		radiusValue = this.radiusValue;
-	return radiusScale( radiusValue( d ) );
+	return isFunction( radiusValue) ? radiusScale( radiusValue( d ) ) : radiusValue;
 } // end FUNCTION radius()
 
 

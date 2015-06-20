@@ -301,6 +301,30 @@ props.radiusValue = {
 };
 
 /**
+* radius-limit minimum value. If `null`, the limit is computed from the data.
+*
+* @type {Null|Number}
+* @default null
+*/
+props.radiusMin = {
+	'observer': '_radiusMinChanged',
+	'type': Number,
+	'value': null
+};
+
+/**
+* radius-limit maximum value. If `null`, the limit is computed from the data.
+*
+* @type {Null|Number}
+* @default null
+*/
+props.radiusMax = {
+	'observer': '_radiusMaxChanged',
+	'type': Number,
+	'value': null
+};
+
+/**
 * Color(s) for plotted points
 *
 * @type {Number|Number[]}
@@ -333,7 +357,7 @@ props.alphaMin = {
 };
 
 /**
-* x-limit maximum value. If `null`, the limit is computed from the data.
+* alpha-limit maximum value. If `null`, the limit is computed from the data.
 *
 * @type {Null|Number}
 * @default null

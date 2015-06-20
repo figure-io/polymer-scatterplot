@@ -9,7 +9,7 @@
 function resetDots() {
 	/* jshint validthis:true */
 	var dots;
-	
+
 	// Bind the data and update existing dots:
 	dots = this.$.marks.selectAll( '.dot' )
 		.data( this.data )
@@ -23,7 +23,7 @@ function resetDots() {
 	// Add any new dots:
 	dots.enter().append( 'circle' )
 		.attr( 'class', 'dot' )
-		.attr( 'r', this.radius )
+		.attr( 'r', this._radius )
 		.attr( 'cx', this._cx )
 		.attr( 'cy', this._cy )
 		.style( 'opacity', this._alpha );

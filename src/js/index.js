@@ -139,6 +139,8 @@ element._yDomain = require( './utils/yDomain.js' );
 
 element._alphaDomain = require( './utils/alphaDomain.js' );
 
+element._radiusDomain = require( './utils/radiusDomain.js' );
+
 // SCATTERPLOT SPECIFIC //
 
 element._cx = require( './utils/x.js' );
