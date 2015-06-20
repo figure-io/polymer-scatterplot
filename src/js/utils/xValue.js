@@ -8,7 +8,7 @@
 * @return {Number} x-value
 */
 function xValue( d ) {
-	return d[ 0 ];
+	return d.x;
 } // end FUNCTION xValue()
 
 

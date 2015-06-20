@@ -297,7 +297,6 @@ props.events = {
 */
 props.radius = {
 	'observer': '_radiusChanged',
-	'type': Object,
 	'value': 3
 };
 
@@ -309,6 +308,40 @@ props.radius = {
 props.colors = {
 	'observer': '_colorsChanged',
 	'value': 'category10'
+};
+
+/**
+* Alpha values (opacity) for plotted points
+*
+* @type {Number|Number[]}
+*/
+props.alphaValue = {
+	'observer': '_alphaValueChanged',
+	'value': 1
+};
+
+/**
+* alpha-limit minimum value. If `null`, the limit is computed from the data.
+*
+* @type {Null|Number}
+* @default null
+*/
+props.alphaMin = {
+	'observer': '_alphaMinChanged',
+	'type': Number,
+	'value': null
+};
+
+/**
+* x-limit maximum value. If `null`, the limit is computed from the data.
+*
+* @type {Null|Number}
+* @default null
+*/
+props.alphaMax = {
+	'observer': '_alphaMaxChanged',
+	'type': Number,
+	'value': null
 };
 
 

@@ -27,7 +27,8 @@ var onResize = require( './../listeners/resize.js' ),
 var delayed = require( './../utils/delayed.js' ),
 	getLabel = require( './../utils/getLabel.js' ),
 	x = require( './../utils/x.js' ),
-	y = require( './../utils/y.js' );
+	y = require( './../utils/y.js' ),
+	alpha = require( './../utils/alpha.js' );
 
 /*
 var delayed = require( './../utils/delayed.js' ),
@@ -71,6 +72,7 @@ function init() {
 	// Scales...
 	this._xScale = d3.scale.linear();
 	this._yScale = d3.scale.linear();
+	this._alphaScale = d3.scale.linear();
 
 	this._xScale
 		.domain( [ 0, 1 ] )
@@ -78,6 +80,11 @@ function init() {
 	this._yScale
 		.domain( [ 0, 1 ] )
 		.range( [ this._graphHeight(), 0 ] );
+	this._alphaScale
+		.domain( [ 0, 1 ] )
+		.range( [ 0, 1 ] )
+		.clamp( true );
+
 
 	// Axes...
 
@@ -99,6 +106,7 @@ function init() {
 	// Dots...
 	this._cx = x( this._xScale );
 	this._cy = y( this._yScale );
+	this._alpha = alpha( this._alphaScale );
 	/*
 	this._line = d3.svg.line()
 		.x( this._x )

@@ -16,7 +16,7 @@ function x( xScale ) {
 	* @returns {Number} pixel value
 	*/
 	return function x( d ) {
-		return xScale( d[ 0 ] );
+		return xScale( d.x );
 	}; // end FUNCTION x()
 } // end FUNCTION x()
 

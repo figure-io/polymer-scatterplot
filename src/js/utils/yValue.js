@@ -8,7 +8,7 @@
 * @return {Number} y-value
 */
 function yValue( d ) {
-	return d[ 1 ];
+	return d.y;
 } // end FUNCTION yValue()
 
 

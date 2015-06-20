@@ -31,10 +31,10 @@ function formatData( data ) {
 	len = data.length;
 	out = new Array( len );
 	for ( i = 0; i < len; i++ ) {
-		out[ i ] =  [
-			xValue( data[ i ] ),
-			yValue( data[ i ] )
-		];
+		out[ i ] =  {
+			'x': xValue( data[ i ] ),
+			'y': yValue( data[ i ] )
+		};
 	}
 	return out;
 } // end FUNCTION formatData()

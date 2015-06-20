@@ -70,7 +70,7 @@
 			'disk.utilization'
 		];
 		*/
-		el.data = el.formatData( JSON.parse( body ) );
+		el.data =  JSON.parse( body );
 		/*
 		el.annotations = [
 			[ 1417564926959, 'beep boop bap foo' ]

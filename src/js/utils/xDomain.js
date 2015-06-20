@@ -33,12 +33,12 @@ function xDomain( min, max ) {
 	}
 	if ( min === null ) {
 		min = d3.min( data, function onDatum( d ) {
-			return d[ 0 ];
+			return d.x;
 		});
 	}
 	if ( max === null ) {
 		max = d3.max( data, function onDatum( d ) {
-			return d[ 0 ];
+			return d.x;
 		});
 	}
 	return [ min, max ];

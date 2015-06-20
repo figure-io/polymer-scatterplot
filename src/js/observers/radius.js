@@ -5,7 +5,6 @@
 var isPositive = require( 'validate.io-positive' );
 
 
-
 // OBSERVER //
 
 /**

@@ -3,8 +3,7 @@
 // MODULES //
 
 var isArray = require( 'validate.io-array' ),
-	isArrayArray = require( 'validate.io-array-array' );
-
+	isObjectArray = require( 'validate.io-object-array' );
 
 // OBSERVER //
 
@@ -22,8 +21,8 @@ function dataChanged( newVal, oldVal ) {
 	if ( oldVal === void 0 ) {
 		return;
 	}
-	if ( !isArrayArray( newVal ) && !( isArray( newVal ) && !newVal.length ) ) {
-		err = new TypeError( 'data::invalid assignment. Data must be an array of arrays.' );
+	if ( !isObjectArray( newVal ) && !( isArray( newVal ) && !newVal.length ) ) {
+		err = new TypeError( 'data::invalid assignment. Data must be an array of objects.' );
 		this.fire( 'err', err );
 		return;
 	}

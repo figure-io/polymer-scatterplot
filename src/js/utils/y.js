@@ -16,7 +16,7 @@ function y( yScale ) {
 	* @returns {Number} pixel value
 	*/
 	return function y( d ) {
-		return yScale( d[ 1 ] );
+		return yScale( d.y );
 	}; // end FUNCTION y()
 } // end FUNCTION y()
 

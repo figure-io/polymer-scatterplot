@@ -108,6 +108,13 @@ element._autoUpdateChanged = require( './observers/autoUpdate.js' );
 
 element._radiusChanged = require( './observers/radius.js' );
 
+element._alphaValueChanged = require( './observers/alphaValue.js' );
+
+element._alphaMinChanged = require( './observers/alphaMin.js' );
+
+element._alphaMaxChanged = require( './observers/alphaMax.js' );
+
+
 // UTILS //
 
 element.formatData = require( './utils/formatData.js' );
@@ -123,6 +130,8 @@ element._graphHeight = require( './utils/graphHeight.js' );
 element._xDomain = require( './utils/xDomain.js' );
 
 element._yDomain = require( './utils/yDomain.js' );
+
+element._alphaDomain = require( './utils/alphaDomain.js' );
 
 
 // EXPORTS //

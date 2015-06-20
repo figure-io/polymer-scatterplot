@@ -33,7 +33,7 @@ function cache( $ ) {
 
 	// Data elements...
 	$.marks = null;
-	$.paths = null;
+	$.dots = null;
 
 	// Annotation elements...
 	$.agroup = null;
