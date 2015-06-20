@@ -41,7 +41,7 @@ function yDomain( min, max ) {
 			return d.y;
 		});
 	}
-	return [ min, max ];
+	return [ 1.05 * min, 1.05 * max ];
 } // end FUNCTION yDomain()
 
 

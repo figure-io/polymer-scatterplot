@@ -19,6 +19,13 @@ function xValueChanged( newVal, oldVal ) {
 		this.xValue = oldVal;
 		return;
 	}
+
+	if ( this.autoUpdate ) {
+
+		// [7] Create new dots:
+		this._resetDots();
+	}
+
 	this.fire( 'change', {
 		'attr': 'xValue',
 		'prev': oldVal,

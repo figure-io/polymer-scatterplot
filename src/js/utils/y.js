@@ -7,17 +7,11 @@
 * @param {Function} yScale - y-scale
 * @returns {Function} function which maps a y-value to a pixel value
 */
-function y( yScale ) {
-	/**
-	* FUNCTION: y( d )
-	*	Maps a y-value to a pixel value.
-	*
-	* @param {Array} d - datum
-	* @returns {Number} pixel value
-	*/
-	return function y( d ) {
-		return yScale( d.y );
-	}; // end FUNCTION y()
+function y( d ) {
+	/* jslint validthis:true */
+	var yScale = this._yScale,
+		yValue = this.yValue;
+	return yScale( yValue( d ) );
 } // end FUNCTION y()
 
 

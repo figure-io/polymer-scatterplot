@@ -39,7 +39,7 @@ function alphaMaxChanged( oldVal, newVal ) {
 	alphaScale.domain( domain );
 
 	if ( this.autoUpdate ) {
-		this.$.dots.style( 'opacity', isFunction( this.alphaValue ) ? this._alpha : this.alphaValue );
+		this.$.dots.style( 'opacity', this._alpha );
 	}
 	this.fire( 'alphaMax', {
 		'type': 'change'

@@ -34,7 +34,7 @@ function alphaValueChanged( newVal, oldVal ) {
 	}
 	if ( this.autoUpdate ) {
 		// [1] Update the dots:
-		this.$.dots.style( 'opacity', isFunction( this.alphaValue ) ? this._alpha : this.alphaValue );
+		this.$.dots.style( 'opacity', this._alpha );
 	}
 
 	this.fire( 'alphaValue', {

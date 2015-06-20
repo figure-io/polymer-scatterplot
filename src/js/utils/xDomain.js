@@ -41,7 +41,7 @@ function xDomain( min, max ) {
 			return d.x;
 		});
 	}
-	return [ min, max ];
+	return [ 1.05 * min, max * 1.05 ];
 } // end FUNCTION xDomain()
 
 

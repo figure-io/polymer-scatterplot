@@ -27,7 +27,8 @@ function createDots() {
 			.attr('class', 'dot')
 			.attr('r', this.radius )
 			.attr('cx', this._cx )
-			.attr('cy', this._cy );
+			.attr('cy', this._cy )
+			.style( 'opacity', this._alpha );
 
 	return this;
 } // end FUNCTION createDots()

@@ -18,6 +18,7 @@ function formatData( data ) {
 	/* jshint validthis:true */
 	var xValue = this.xValue,
 		yValue = this.yValue,
+		alphaValue = this.alphaValue,
 		len,
 		out,
 		err,
@@ -33,7 +34,8 @@ function formatData( data ) {
 	for ( i = 0; i < len; i++ ) {
 		out[ i ] =  {
 			'x': xValue( data[ i ] ),
-			'y': yValue( data[ i ] )
+			'y': yValue( data[ i ] ),
+			'alpha': alphaValue( data[ i ] )
 		};
 	}
 	return out;

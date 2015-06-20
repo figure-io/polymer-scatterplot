@@ -45,20 +45,26 @@ function dataChanged( newVal, oldVal ) {
 	// [3] Update the yScale:
 	this._yScale.domain( domain );
 
+	// [4] Update the alphaDomain:
+	domain = this._alphaDomain( this.alphaMin, this.alphaMax );
+
+	// [5] Update the alphaScale
+	this._alphaScale.domain( domain );
+
 	if ( this.autoUpdate ) {
-		// [4] Update the xAxis:
+		// [6] Update the xAxis:
 		this.$.xAxis.call( this._xAxis );
 
-		// [5] Update the yAxis:
+		// [7] Update the yAxis:
 		this.$.yAxis.call( this._yAxis );
 
 		/*
-		// [6] Update annotations: (TODO: this is not always necessary. Only when updating data such that the xMin and/or xMax changes.)
+		// [8] Update annotations: (TODO: this is not always necessary. Only when updating data such that the xMin and/or xMax changes.)
 		this.$.annotationMarkers.attr( 'd', this._triangle );
 		this.$.annotationLines.attr( 'd', this._vline );
 		*/
 
-		// [7] Create new dots:
+		// [9] Create new dots:
 		this._resetDots();
 	}
 	this.fire( 'data', {

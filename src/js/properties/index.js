@@ -295,8 +295,8 @@ props.events = {
 *
 * @type {Number|Number[]}
 */
-props.radius = {
-	'observer': '_radiusChanged',
+props.radiusValue = {
+	'observer': '_radiusValueChanged',
 	'value': 3
 };
 

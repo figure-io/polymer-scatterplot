@@ -70,7 +70,8 @@
 			'disk.utilization'
 		];
 		*/
-		el.data =  JSON.parse( body );
+		el.alphaValue = function(d) { return d.a; };
+		el.data = JSON.parse( body );
 		/*
 		el.annotations = [
 			[ 1417564926959, 'beep boop bap foo' ]

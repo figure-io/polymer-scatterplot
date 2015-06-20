@@ -7,17 +7,11 @@
 * @param {Function} xScale - x-scale
 * @returns {Function} function which maps an x-value to a pixel value
 */
-function x( xScale ) {
-	/**
-	* FUNCTION: x( d )
-	*	Maps an x-value to a pixel value.
-	*
-	* @param {Array} d - datum
-	* @returns {Number} pixel value
-	*/
-	return function x( d ) {
-		return xScale( d.x );
-	}; // end FUNCTION x()
+function x( d ) {
+	/* jslint validthis:true */
+	var xScale = this._xScale,
+		xValue = this.xValue;
+	return xScale( xValue( d ) );
 } // end FUNCTION x()
 
 

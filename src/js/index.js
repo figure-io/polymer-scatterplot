@@ -106,7 +106,7 @@ element._autoResizeChanged = require( './observers/autoResize.js' );
 
 element._autoUpdateChanged = require( './observers/autoUpdate.js' );
 
-element._radiusChanged = require( './observers/radius.js' );
+element._radiusValueChanged = require( './observers/radiusValue.js' );
 
 element._alphaValueChanged = require( './observers/alphaValue.js' );
 
@@ -114,10 +114,16 @@ element._alphaMinChanged = require( './observers/alphaMin.js' );
 
 element._alphaMaxChanged = require( './observers/alphaMax.js' );
 
+element._radiusMinChanged = require( './observers/alphaMin.js' );
+
+element._radiusMaxChanged = require( './observers/alphaMax.js' );
+
 
 // UTILS //
 
 element.formatData = require( './utils/formatData.js' );
+
+element.alpha = require( './utils/alpha.js');
 
 /*
 element.formatAnnotations = require( './utils/formatAnnotations.js' );
@@ -132,6 +138,11 @@ element._xDomain = require( './utils/xDomain.js' );
 element._yDomain = require( './utils/yDomain.js' );
 
 element._alphaDomain = require( './utils/alphaDomain.js' );
+
+// SCATTERPLOT SPECIFIC //
+
+element._cx = require( './utils/x.js' );
+element._cy = require( './utils/y.js' );
 
 
 // EXPORTS //

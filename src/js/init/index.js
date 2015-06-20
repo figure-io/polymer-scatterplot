@@ -28,7 +28,8 @@ var delayed = require( './../utils/delayed.js' ),
 	getLabel = require( './../utils/getLabel.js' ),
 	x = require( './../utils/x.js' ),
 	y = require( './../utils/y.js' ),
-	alpha = require( './../utils/alpha.js' );
+	alpha = require( './../utils/alpha.js' ),
+	radius = require( './../utils/radius.js' );
 
 /*
 var delayed = require( './../utils/delayed.js' ),
@@ -73,6 +74,7 @@ function init() {
 	this._xScale = d3.scale.linear();
 	this._yScale = d3.scale.linear();
 	this._alphaScale = d3.scale.linear();
+	this._radiusScale = d3.scale.sqrt();
 
 	this._xScale
 		.domain( [ 0, 1 ] )
@@ -84,7 +86,9 @@ function init() {
 		.domain( [ 0, 1 ] )
 		.range( [ 0, 1 ] )
 		.clamp( true );
-
+	this._radiusScale
+		.domain( [ 0, 1 ] )
+		.range( [ 3, 20 ] );
 
 	// Axes...
 
@@ -104,9 +108,11 @@ function init() {
 		.ticks( this.yNumTicks || 5 );
 
 	// Dots...
-	this._cx = x( this._xScale );
-	this._cy = y( this._yScale );
-	this._alpha = alpha( this._alphaScale );
+	this._cx = x.bind( this );
+	this._cy = y.bind( this );
+	this._alpha = alpha.bind( this );
+	this._radius = radius.bind( this );
+
 	/*
 	this._line = d3.svg.line()
 		.x( this._x )

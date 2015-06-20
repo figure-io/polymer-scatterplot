@@ -19,6 +19,13 @@ function yValueChanged( newVal, oldVal ) {
 		this.yValue = oldVal;
 		return;
 	}
+
+	if ( this.autoUpdate ) {
+
+		// [7] Create new dots:
+		this._resetDots();
+	}
+
 	this.fire( 'change', {
 		'attr': 'yValue',
 		'prev': oldVal,
