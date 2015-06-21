@@ -4,6 +4,75 @@ Scatterplot
 
 > A [Polymer](https://www.polymer-project.org/) web component for displaying scatterplots.
 
+---
+1. [Installation](#install)
+1. [Usage](#usage)
+	-	[Properties](#properties)
+		*	[data](#prop-data)
+		*	[xValue](#prop-xvalue)
+		* 	[yValue](#prop-yvalue)
+		*	[alphaValue](#prop-alphavalue)
+		*	[alphaMin](#prop-alphamin)
+		*	[alphaMax](#prop-alphamax)
+		*	[radiusValue](#prop-radiusValue)
+		*	[radiusMin](#prop-radiusmin)
+		*	[radiusMax](#prop-radiusmax)
+		* 	[isDefined](#prop-isdefined)
+		*	[config](#prop-config)
+		*	[colors](#prop-colors)
+		*	[width](#prop-width)
+		*	[height](#prop-height)
+		*	[paddingLeft](#prop-paddingleft)
+		*	[paddingRight](#prop-paddingright)
+		*	[paddingTop](#prop-paddingtop)
+		*	[paddingBottom](#prop-paddingbottom)
+		*	[title](#prop-title)
+		*	[xLabel](#prop-xlabel)
+		*	[yLabel](#prop-ylabel)
+		*	[xMin](#prop-xmin)
+		*	[xMax](#prop-xmax)
+		*	[yMin](#prop-ymin)
+		*	[yMax](#prop-ymax)
+		*	[xTickFormat](#prop-xtickformat)
+		*	[yTickFormat](#prop-ytickformat)
+		*	[xNumTicks](#prop-xnumticks)
+		*	[yNumTicks](#prop-ynumticks)
+		*	[xAxisOrient](#prop-xaxisorient)
+		*	[yAxisOrient](#prop-yaxisorient)
+		*	[isDraggable](#prop-isdraggable)
+		*	[isDroppable](#prop-isdroppable)
+		*	[autoUpdate](#prop-autoupdate)
+		*	[autoResize](#prop-autoresize)
+		*	[events](#prop-events)
+	-	[Methods](#methods)
+		*	[clear()](#method-clear)
+		*	[stream()](#method-stream)
+	-	[Events](#events)
+		*	[err](#evt-err)
+		*	[change](#evt-change)
+		*	[data](#evt-data)
+		*	[width](#evt-width)
+		*	[height](#evt-height)
+		*	[xMin](#evt-xmin)
+		*	[xMax](#evt-xmax)
+		*	[yMin](#evt-ymin)
+		*	[yMax](#evt-ymax)
+		*	[resized](#evt-resized)
+		*	[clicked](#evt-clicked)
+		*	[annotation](#evt-annotation)
+		*	[dragStart](#evt-dragstart)
+		*	[dragEnd](#evt-dragend)
+		*	[dragEnter](#evt-dragenter)
+		*	[dragLeave](#evt-dragleave)
+		*	[dropped](#evt-dropped)
+1. 	[Examples](#examples)
+1. 	[Development](#development)
+1. 	[Build](#build)
+1. 	[Tests](#tests)
+	-	[Unit](#unit)
+	-	[Coverage](#test-coverage)
+1. 	[License](#license)
+
 ### Properties
 
 <a name="prop-data"></a>
@@ -367,6 +436,228 @@ List of [event](#events) names. The `events` property is intended to be __read-o
 ``` javascript
 var evts = el.events;
 ```
+
+### Methods
+
+<a name="method-clear"></a>
+#### el.clear()
+
+Clears the chart and resets axes.
+
+``` javascript
+el.clear();
+```
+
+<a name="method-stream"></a>
+#### el.stream( [options] )
+
+Returns a writable chart stream.
+
+``` javascript
+var stream = el.stream();
+```
+
+TODO: define. Options. Behavior.
+
+
+### Events
+
+The component emits events during both chart configuration and interaction. The following events are emitted...
+
+<a name="evt-err"></a>
+#### 'err'
+
+The element emits an `err` event whenever an error occurs; e.g., improper setting of properties.
+
+``` javascript
+el.addEventListener( 'err', function onError( err ) {
+	console.log( err );
+});
+```
+
+__NOTE__: the event name will change to `error` once issue [#138](https://github.com/webcomponents/webcomponentsjs/issues/138) is resolved. The preferred name is `error`.
+
+
+<a name="evt-change"></a>
+#### 'change'
+
+The element emits a `change` event whenever a property changes.
+
+``` javascript
+el.addEventListener( 'change', function onChange( evt ) {
+	console.log( evt.attr, evt.prev, evt.curr, evt.data );
+});
+```
+
+<a name="evt-data"></a>
+#### 'data'
+
+The element emits a `data` event when the `data` property changes.
+
+``` javascript
+el.addEventListener( 'data', function onEvent( evt ) {
+	console.log( this.data );
+});
+```
+
+<a name="evt-width"></a>
+#### 'width'
+
+The element emits a `width` event when the `width` property changes.
+
+``` javascript
+el.addEventListener( 'width', function onEvent( evt ) {
+	console.log( this.width );
+});
+```
+
+<a name="evt-height"></a>
+#### 'height'
+
+The element emits a `height` event when the `height` property changes.
+
+``` javascript
+el.addEventListener( 'height', function onEvent( evt ) {
+	console.log( this.height );
+});
+```
+
+<a name="evt-xmin"></a>
+#### 'xMin'
+
+The element emits an `xMin` event when the `xMin` property changes.
+
+``` javascript
+el.addEventListener( 'xMin', function onEvent( evt ) {
+	console.log( this.xMin );
+});
+```
+
+<a name="evt-xmax"></a>
+#### 'xMax'
+
+The element emits an `xMax` event when the `xMax` property changes.
+
+``` javascript
+el.addEventListener( 'xMax', function onEvent( evt ) {
+	console.log( this.xMax );
+});
+```
+
+<a name="evt-ymin"></a>
+#### 'yMin'
+
+The element emits a `yMin` event when the `yMin` property changes.
+
+``` javascript
+el.addEventListener( 'yMin', function onEvent( evt ) {
+	console.log( this.yMin );
+});
+```
+
+<a name="evt-ymax"></a>
+#### 'yMax'
+
+The element emits a `yMax` event when the `yMax` property changes.
+
+``` javascript
+el.addEventListener( 'yMax', function onEvent( evt ) {
+	console.log( this.yMax );
+});
+```
+
+<a name="evt-resized"></a>
+#### 'resized'
+
+The element emits a `resized` event when the element's resize listener is triggered.
+
+``` javascript
+el.addEventListener( 'resized', function onResize( evt ) {
+	console.log( 'Chart received a resize event.' );
+});
+```
+
+<a name="evt-clicked"></a>
+#### 'clicked'
+
+The element emits a `clicked` event when a chart element having a click handler is clicked.
+
+``` javascript
+el.addEventListener( 'clicked', function onClick( evt ) {
+	console.log( evt );
+});
+```
+
+<a name="evt-annotation"></a>
+#### 'annotation'
+
+The element emits an `annotation` event when an annotation element is clicked and toggled to an active state.
+
+``` javascript
+el.addEventListener( 'annotation', function onClick( evt ) {
+	console.log( evt.idx, evt.value );
+});
+```
+
+__Note__: one use case for this event is linking the chart with an external element whose responsibility is displaying and filtering annotations. While annotation text could be displayed over top the graph, this will invariably be suboptimal within the context of an SVG. A more flexible solution would be to display the annotation text in a separate UI element which is activated when a corresponding SVG element is activated.
+
+
+<a name="evt-dragstart"></a>
+#### 'dragStart'
+
+The element emits a `dragStart` event when a legend entry is dragged.
+
+``` javascript
+el.addEventListener( 'dragStart', function onDragStart( evt ) {
+	console.log( evt );
+});
+```
+
+<a name="evt-dragend"></a>
+#### 'dragEnd'
+
+The element emits a `dragEnd` event when a legend entry stops being dragged.
+
+``` javascript
+el.addEventListener( 'dragEnd', function onDragEnd( evt ) {
+	console.log( evt );
+});
+```
+
+<a name="evt-dragenter"></a>
+#### 'dragEnter'
+
+The element emits a `dragEnter` event when a draggable element enters the chart area.
+
+``` javascript
+el.addEventListener( 'dragEnter', function onDragEnter( evt ) {
+	console.log( evt );
+});
+```
+
+<a name="evt-dragleave"></a>
+#### 'dragLeave'
+
+The element emits a `dragLeave` event when a draggable element leaves the chart area.
+
+``` javascript
+el.addEventListener( 'dragLeave', function onDragLeave( evt ) {
+	console.log( evt );
+});
+```
+
+<a name="evt-dropped"></a>
+#### 'dropped'
+
+The element emits a `dropped` event when a draggable element is dropped into the chart area.
+
+``` javascript
+el.addEventListener( 'dropped', function onDrop( evt ) {
+	console.log( evt );
+});
+```
+
+__Note__: this event is only emitted when `isDroppable` is `true`.
 
 ## Examples
 
