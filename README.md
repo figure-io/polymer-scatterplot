@@ -125,7 +125,7 @@ el.yValue = function( d, i ) {
 };
 ```
 
-<a name="attr-alphavalue"></a>
+<a name="prop-alphavalue"></a>
 #### el.alphaValue
 
 Defines the `alpha` value / `opacity` of each circle. If set to a constant on the interval `[0,1]`, the `opacity` is the same for all circles. If set to a `function`, each alpha-value is mapped to a value on the interval `[0,1]`. The default `opacity` for all circles is `1`.
@@ -142,7 +142,7 @@ el.alphaValue = function alphaValue( d, i ) {
 ```
 
 
-<a name="attr-alphamin"></a>
+<a name="prop-alphamin"></a>
 #### el.alphaMin
 
 Defines the minimum value of the alpha-domain. Default is `null`.
@@ -154,7 +154,7 @@ el.alphaMin = -10;
 If set to `null`, the `alphaMin` is dynamically calculated from the data. This attribute is only relevant when the alpha-value accessor is a `function`.
 
 
-<a name="attr-alphamax"></a>
+<a name="prop-alphamax"></a>
 #### el.alphaMax
 
 Defines the maximum value of the z-domain. Default is `null`.
@@ -163,7 +163,7 @@ Defines the maximum value of the z-domain. Default is `null`.
 el.alphaMax = 10;
 ```
 
-<a name="attr-radiusvalue"></a>
+<a name="prop-radiusvalue"></a>
 #### el.radiusValue
 
 Defines the radius-value accessor. radius-values determine the `radius` of a circle. If set to a constant, the same `radius` is applied to all circles. If set to a `function`, each radius-value is mapped to a value on the interval `[3,20]`. The default `radius` for all cells is `3`.
@@ -180,7 +180,7 @@ el.radiusValue = function radiusValue( d, i ) {
 ```
 
 
-<a name="attr-radiusmin"></a>
+<a name="prop-radiusmin"></a>
 #### el.radiusMin
 
 Defines the minimum value of the radius-domain. Default is `null`.
@@ -192,7 +192,7 @@ el.zMin = -10;
 If set to `null`, the `radiusMin` is dynamically calculated from the data. This attribute is only relevant when the radius-value accessor is a `function`.
 
 
-<a name="attr-radiusmax"></a>
+<a name="prop-radiusmax"></a>
 #### el.radiusMax
 
 Defines the maximum value of the radius-domain. Default is `null`.
